@@ -10,7 +10,7 @@ public class BombAction : MonoBehaviour
     private List<GameObject> enemyList = new List<GameObject>();
 
     private float distance;
-    [SerializeField] private float radius;
+    [SerializeField] private float radius = 25f;
 
     private GameObject bomb;
 
@@ -41,8 +41,7 @@ public class BombAction : MonoBehaviour
             float zEnemy = enemy.transform.position.z;
             
             distance = Mathf.Sqrt(Mathf.Pow(xBomb - xEnemy, 2) + Mathf.Pow(zBomb - zEnemy, 2));
-            radius = 25f;
-            
+
             if (distance <= radius)
             {
                 Destroy(enemy);

@@ -10,7 +10,7 @@ public class BombAction : MonoBehaviour
     private List<GameObject> enemyList = new List<GameObject>();
 
     private float distance;
-    private float radius;
+    [SerializeField] private float radius;
 
     private GameObject bomb;
 

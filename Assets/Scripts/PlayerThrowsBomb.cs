@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerThrowsBomb : MonoBehaviour
 {
     
-    [SerializeField] private float throwForce = 30.0f;
+    [SerializeField] private float throwForce = 25.0f;
     [SerializeField] private GameObject bombPrefab;
 
     // Update is called once per frame

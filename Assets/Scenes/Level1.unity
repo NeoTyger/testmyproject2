@@ -4295,6 +4295,10 @@ PrefabInstance:
       value: Enemy (Stalker)
       objectReference: {fileID: 0}
     - target: {fileID: 3033780491750632361, guid: 595d7090766242f4bbc88bfac7e6318b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3033780491750632361, guid: 595d7090766242f4bbc88bfac7e6318b, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 339490658}

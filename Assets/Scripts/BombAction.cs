@@ -1,19 +1,23 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class BombAction : MonoBehaviour
 {
 
-    private List<GameObject> enemyList;
+    private List<GameObject> enemyList = new List<GameObject>();
 
-    private Vector3 distance;
-    private Vector3 explosionRadius;
+    private float distance;
+    private float radius;
+
+    private GameObject bomb;
 
     // Start is called before the first frame update
     void Start()
     {
+        bomb = gameObject;
         enemyList.Add(GameObject.FindGameObjectWithTag("Enemy"));
     }
 
@@ -26,12 +30,20 @@ public class BombAction : MonoBehaviour
     }
     private void Explosion()
     {
+        Destroy(gameObject);
+        
         foreach (var enemy in enemyList)
         {
-            distance = transform.position - enemy.transform.position;
-            explosionRadius = new Vector3(5,5,5);
+            float xBomb = bomb.transform.position.x;
+            float zBomb = bomb.transform.position.z;
             
-            if (distance <= explosionRadius)
+            float xEnemy = enemy.transform.position.x;
+            float zEnemy = enemy.transform.position.z;
+            
+            distance = Mathf.Sqrt(Mathf.Pow(xBomb - xEnemy, 2) + Mathf.Pow(zBomb - zEnemy, 2));
+            radius = 25f;
+            
+            if (distance <= radius)
             {
                 Destroy(enemy);
             }

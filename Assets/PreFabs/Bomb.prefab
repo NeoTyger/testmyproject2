@@ -125,4 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a5cde18a1e4b44d90f31baf73c67c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bomb: {fileID: 1378997764926069170}
+  radius: 25

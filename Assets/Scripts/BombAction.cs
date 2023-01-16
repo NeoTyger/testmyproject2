@@ -7,7 +7,8 @@ using UnityEngine;
 public class BombAction : MonoBehaviour
 {
 
-    private List<GameObject> enemyList = new List<GameObject>();
+    //private List<GameObject> enemyList = new List<GameObject>();
+    private GameObject[] enemyList;
 
     private float distance;
     [SerializeField] private float radius = 25f;
@@ -18,7 +19,8 @@ public class BombAction : MonoBehaviour
     void Start()
     {
         bomb = gameObject;
-        enemyList.Add(GameObject.FindGameObjectWithTag("Enemy"));
+        //enemyList.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+        enemyList = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     private void OnCollisionEnter(Collision collision)

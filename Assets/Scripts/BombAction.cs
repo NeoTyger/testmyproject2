@@ -2,11 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using UnityEditor;
 using UnityEngine;
 
 public class BombAction : MonoBehaviour
 {
 
+    //SENSE DELEGATES O EVENTS
+    
+    
+    /*
     //private List<GameObject> enemyList = new List<GameObject>();
     private GameObject[] enemyList;
 
@@ -49,5 +54,33 @@ public class BombAction : MonoBehaviour
                 Destroy(enemy);
             }
         }
+    }*/
+    
+    //AMB DELEGATES O EVENTS
+    
+
+    [SerializeField] private float radius = 25f;
+    public delegate void ActionKey(GameObject bomb, float radius);
+
+    public static event ActionKey onPressKey;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (onPressKey != null)
+            {
+                onPressKey(gameObject, radius);
+            }
+        }
     }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }

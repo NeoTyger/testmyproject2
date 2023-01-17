@@ -4296,7 +4296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3033780491750632361, guid: 595d7090766242f4bbc88bfac7e6318b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3033780491750632361, guid: 595d7090766242f4bbc88bfac7e6318b, type: 3}
       propertyPath: playerTransform
@@ -4355,6 +4355,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5196252088015777202, guid: 087b06356124b9647a505b4130d33969, type: 3}
+      propertyPath: bombPrefab
+      value: 
+      objectReference: {fileID: 1378997764926069170, guid: 9dd8fe043256a0045b6c63b2985fde64, type: 3}
     - target: {fileID: 6457724065217475013, guid: 087b06356124b9647a505b4130d33969, type: 3}
       propertyPath: m_Name
       value: Enemy

@@ -64,21 +64,14 @@ public class BombAction : MonoBehaviour
 
     public static event ActionKey onPressKey;
 
-    private void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (collision.gameObject.CompareTag("Ground"))
         {
             if (onPressKey != null)
             {
                 onPressKey(gameObject, radius);
             }
-        }
-    }
-    
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
             Destroy(gameObject);
         }
     }

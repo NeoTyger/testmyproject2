@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _txtCoins;
     [SerializeField] private TextMeshProUGUI _txtWin;
     [SerializeField] private Button _btnReset;
-    [SerializeField] private Slider _healthBar;
+    public Slider _healthBar;
 
     private int coinCount = 0;
 

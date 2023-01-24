@@ -22,6 +22,7 @@ public class HealAction : ItemAction
             //Cura al 100% al jugador
             //vidaPlayer = 100
             _gameManager.playerHealth = 100.0f;
+            _gameManager._healthBar.value = _gameManager.playerHealth; 
             ItemMsg();
             Destroy(gameObject);
         }

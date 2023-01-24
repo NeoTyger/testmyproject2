@@ -1,17 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CollectCoin : MonoBehaviour
 {
 
     private GameManager _gameManager;
+    private int coinCount = 0;
 
-    private void Start()
-    {
-        _gameManager = FindObjectOfType<GameManager>();
-    }
+    public static event Action onCollectCoin;
+
+    // private void Start()
+    // {
+    //     _gameManager = FindObjectOfType<GameManager>();
+    // }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -19,7 +23,11 @@ public class CollectCoin : MonoBehaviour
         {
             //add points
             //Debug.Log("+10 pts");
-            _gameManager.IncrementarMonedas();
+            //_gameManager.IncrementarMonedas();
+            if (onCollectCoin != null)
+            {
+                onCollectCoin();
+            }
             Destroy(gameObject);
         }
     }

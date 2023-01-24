@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Slider _healthBar;
 
     private int coinCount = 0;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
         _btnReset.onClick.AddListener(GameOver);
         _btnReset.gameObject.SetActive(false);
         Time.timeScale = 1.0f;
+
+        CollectCoin.onCollectCoin += IncrementarMonedas;
     }
 
     private void GameOver()
@@ -42,16 +44,18 @@ public class GameManager : MonoBehaviour
 
     public void IncrementarMonedas()
     {
-        if (coinCount < 3)
+        if (coinCount <= 3)
         {
             coinCount++;
             //Debug.Log($"You have ${coinCount*10}");
             _txtCoins.text = "POINTS: " + coinCount * 10;
+            //CollectCoin.onCollectCoin -= IncrementarMonedas;
             _spawnCoin.SpawnNewCoin();
         }
         else
         {
             EndLevel("You Win!");
+            CollectCoin.onCollectCoin -= IncrementarMonedas;
         }
         
     }

@@ -8,8 +8,7 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private GameManager _gameManager;
     
-    [SerializeField]
-    private int moveSpeed = 50;
+    public int moveSpeed = 50;
 
     [SerializeField] private int fuerzaSalto = 4;
 

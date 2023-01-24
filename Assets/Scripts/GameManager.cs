@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    private float playerHealth = 100.0f;
+    public float playerHealth = 100.0f;
     
     //Cached reference
     private SpawnCoin _spawnCoin;

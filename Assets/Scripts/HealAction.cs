@@ -1,9 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealAction : MonoBehaviour
+public class HealAction : ItemAction
 {
+
+    private GameManager _gameManager;
+
+    private void Start()
+    {
+        _gameManager = FindObjectOfType<GameManager>();
+    }
 
     //vida del player de la clase PlayerMovement
     
@@ -13,8 +21,14 @@ public class HealAction : MonoBehaviour
         {
             //Cura al 100% al jugador
             //vidaPlayer = 100
-            Debug.Log("VIDA MÁXIMA");
+            _gameManager.playerHealth = 100.0f;
+            ItemMsg();
             Destroy(gameObject);
         }
+    }
+
+    public override void ItemMsg()
+    {
+        Debug.Log("VIDA MÁXIMA!!!");
     }
 }

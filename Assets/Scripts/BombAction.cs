@@ -59,7 +59,7 @@ public class BombAction : MonoBehaviour
     //AMB DELEGATES O EVENTS
     
 
-    [SerializeField] private float radius = 25f;
+    [SerializeField] private float radius = 0.5f;
     public delegate void ActionKey(GameObject bomb, float radius);
 
     public static event ActionKey onPressKey;
